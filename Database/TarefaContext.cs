@@ -21,8 +21,8 @@ namespace crud.usuario.Database
         {
             var tarefas = modelBuilder.Entity<Tarefa>();
             tarefas.ToTable("tb_tarefas");
-            tarefas.HasKey(x => x.Id);
-            tarefas.Property(x => x.Id).HasColumnName("id").ValueGeneratedOnAdd();
+            tarefas.HasKey(x => x.IdTarefa);
+            tarefas.Property(x => x.IdTarefa).HasColumnName("id").ValueGeneratedOnAdd();
             tarefas.Property(x => x.Titulo).HasColumnName("titulo").IsRequired();
             tarefas.Property(x => x.Descricao).HasColumnName("descricao");
             tarefas.Property(x => x.Done).HasColumnName("concluido");

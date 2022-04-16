@@ -26,7 +26,7 @@ namespace crud.usuario.Database
             usuario.Property(x => x.Id).HasColumnName("id").ValueGeneratedOnAdd();
             usuario.Property(x => x.Nome).HasColumnName("nome").IsRequired();
             usuario.Property(x => x.DataNascimento).HasColumnName("dtNascimento");
-
+            usuario.Property(x => x.idTarefa).HasColumnName("idTarefa");
         }
     }
 }

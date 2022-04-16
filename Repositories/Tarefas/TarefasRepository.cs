@@ -21,13 +21,14 @@ namespace crud.usuario.Repositories.Tarefas
 
         public void AtualizaTarefa(Tarefa tarefa)
         {
-            throw new NotImplementedException();
+            _context.Update(tarefa);
         }
 
         public async Task<Tarefa> BuscaTarefa(int id)
         {
-            throw new NotImplementedException();
-
+            return await _context
+                        .Tarefas
+                        .Where(x => x.IdTarefa == id).FirstOrDefaultAsync();
         }
 
         public async Task<IEnumerable<Tarefa>> BuscaTarefas()
@@ -37,12 +38,12 @@ namespace crud.usuario.Repositories.Tarefas
 
         public void DeletaTarefa(Tarefa tarefa)
         {
-            throw new NotImplementedException();
+            _context.Remove(tarefa);
         }
 
-        public Task<bool> SaveChangesAsync()
+        public async Task<bool> SaveChangesAsync()
         {
-            throw new NotImplementedException();
+            return await _context.SaveChangesAsync() > 0;
         }
     }
 }

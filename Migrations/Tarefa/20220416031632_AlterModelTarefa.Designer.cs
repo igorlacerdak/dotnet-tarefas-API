@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using crud.usuario.Database;
@@ -11,9 +12,10 @@ using crud.usuario.Database;
 namespace crud.usuario.Migrations.Tarefa
 {
     [DbContext(typeof(TarefaContext))]
-    partial class TarefaContextModelSnapshot : ModelSnapshot
+    [Migration("20220416031632_AlterModelTarefa")]
+    partial class AlterModelTarefa
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -24,12 +26,12 @@ namespace crud.usuario.Migrations.Tarefa
 
             modelBuilder.Entity("crud.usuario.Model.Tarefa", b =>
                 {
-                    b.Property<int>("IdTarefa")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
                         .HasColumnName("id");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("IdTarefa"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("DataCriacao")
                         .HasColumnType("timestamp with time zone")
@@ -52,7 +54,7 @@ namespace crud.usuario.Migrations.Tarefa
                         .HasColumnType("text")
                         .HasColumnName("titulo");
 
-                    b.HasKey("IdTarefa");
+                    b.HasKey("Id");
 
                     b.ToTable("tb_tarefas", (string)null);
                 });

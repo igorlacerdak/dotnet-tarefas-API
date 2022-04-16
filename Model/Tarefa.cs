@@ -3,7 +3,7 @@ namespace crud.usuario.Model
     public class Tarefa
 
     {
-        public int Id { get; set; }
+        public int IdTarefa { get; set; }
         public string? Titulo { get; set; }
         public string? Descricao { get; set; }
         public bool Done { get; set; }

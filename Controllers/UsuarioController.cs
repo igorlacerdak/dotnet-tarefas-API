@@ -16,7 +16,7 @@ namespace crud.usuario.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetUsuarios()
+        public async Task<IActionResult> GetAllUsuarios()
         {
             var usuarios = await _repository.BuscaUsuarios();
             return usuarios.Any()
