@@ -31,7 +31,7 @@ namespace crud.usuario.Repositories
         {
             return await _context
                         .Usuarios
-                         .Where(x => x.Id == id).FirstOrDefaultAsync();
+                        .Where(x => x.Id == id).FirstOrDefaultAsync();
         }
 
         public void DeletaUsuario(Usuario usuario)

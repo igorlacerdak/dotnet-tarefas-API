@@ -10,6 +10,12 @@ namespace crud.usuario.Database
 
         }
 
+        // protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        // {
+        //     optionsBuilder.UseNpgsql(connectionString: ("Default"));
+        // }
+
+
         public DbSet<Usuario> Usuarios { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

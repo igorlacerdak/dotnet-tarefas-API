@@ -1,5 +1,6 @@
 using crud.usuario.Database;
 using crud.usuario.Repositories;
+using crud.usuario.Repositories.Tarefas;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,7 +17,14 @@ builder.Services.AddDbContext<UsuarioContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("Default"));
 });
 
+builder.Services.AddDbContext<TarefaContext>(options =>
+{
+    options.UseNpgsql(builder.Configuration.GetConnectionString("Default"));
+});
+
 builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+builder.Services.AddScoped<ITarefasRepository, TarefasRepository>();
+
 
 var app = builder.Build();
 
